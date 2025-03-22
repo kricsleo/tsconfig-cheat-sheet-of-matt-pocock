@@ -1,0 +1,17 @@
+{
+  "name": "tsconfig-cheat-sheet-of-matt-pocock",
+  "version": "0.0.0",
+  "description": "Grabs the tsconfig.json from the cheat sheet of Matt Pocock",
+  "keywords": ["tsconfig", "cheat sheet"],
+  "author": "Kricsleo <kricsleo@163.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/kricsleo/craie#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kricsleo/craie.git"
+  },
+  "packageManager": "pnpm@10.6.3",
+  "scripts": {
+    "dev": ""
+  }
+}
