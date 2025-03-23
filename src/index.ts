@@ -19,16 +19,24 @@ function toLibConfig(tsConfig: string) {
 
   let shouldSkip = false
   for(const line of tsConfig.split('\n')) {
-    if(line.includes('If transpiling with') || line.includes('If your code doesn\'t run in the DOM')) {
+    if(
+        line.includes('If transpiling with') 
+        || line.includes('If your code doesn\'t run in the DOM')
+    ) {
         shouldSkip = true
-    } else if(
+    }
+    if(
         line.includes('If NOT transpiling') 
         || line.includes('If your code runs in the DOM') 
         || line.startsWith('  }')
     ) {
         shouldSkip = false
     }
-    if(shouldSkip) {
+    if(
+        shouldSkip
+        || line.includes('/* ')
+        || line.trim() === ''
+    ) {
         continue
     }
     lines.push(line)
