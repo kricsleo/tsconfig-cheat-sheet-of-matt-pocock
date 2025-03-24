@@ -1,6 +1,7 @@
 {
   "name": "tsconfig-cheat-sheet-of-matt-pocock",
   "version": "0.0.0",
+  "type": "module",
   "description": "Grabs the tsconfig.json from the cheat sheet of Matt Pocock",
   "keywords": [
     "tsconfig",
@@ -13,13 +14,25 @@
     "type": "git",
     "url": "git+https://github.com/kricsleo/craie.git"
   },
+  "exports": {
+    ".": {
+      "import": "./src/index.mjs",
+      "require": "./src/index.cjs"
+    }
+  },
+  "main": "src/index.cjs",
+  "module": "src/index.mjs",
+  "types": "src/index.d.ts",
   "packageManager": "pnpm@10.6.3",
   "scripts": {
-    "dev": ""
+    "dev": "bun run src/index.ts",
+    "build": "unbuild"
   },
   "dependencies": {
+    "cheerio": "^1.0.0"
+  },
+  "devDependencies": {
     "@types/node": "^22.13.11",
-    "cheerio": "^1.0.0",
-    "strip-json-comments": "^5.0.1"
+    "unbuild": "^3.5.0"
   }
 }

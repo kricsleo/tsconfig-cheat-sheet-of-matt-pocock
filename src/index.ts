@@ -1,12 +1,11 @@
 import fs from 'node:fs/promises'
 import { load } from 'cheerio'
-import stripJsonComments from 'strip-json-comments'
 
 const URL = 'https://www.totaltypescript.com/tsconfig-cheat-sheet'
 
 sync()
 
-async function sync() {
+export async function sync() {
   const tsConfig = await grab()
   await fs.writeFile('tsconfig.full.json', tsConfig)
 
