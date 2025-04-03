@@ -3,14 +3,15 @@ import { load } from 'cheerio'
 
 const URL = 'https://www.totaltypescript.com/tsconfig-cheat-sheet'
 
-sync()
-
-export async function sync() {
+export async function generateLibTsConfig(path: string) {
   const tsConfig = await grab()
-  await fs.writeFile('tsconfig.full.json', tsConfig)
-
   const libTsConfig = toLibConfig(tsConfig)
-  await fs.writeFile('tsconfig.lib.json', libTsConfig)
+  await fs.writeFile(path, libTsConfig)
+}
+
+export async function generateFullTsConfig(path: string) {
+  const tsConfig = await grab()
+  await fs.writeFile(path, tsConfig)
 }
 
 function toLibConfig(tsConfig: string) {
