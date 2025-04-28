@@ -24,7 +24,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "bin": "./dist/cli.mjs",
-  "packageManager": "pnpm@10.7.1",
+  "packageManager": "pnpm@10.10.0",
   "scripts": {
     "dev": "bun run src/index.ts",
     "build": "unbuild"
@@ -33,7 +33,7 @@
     "cheerio": "^1.0.0"
   },
   "devDependencies": {
-    "@types/node": "^22.14.0",
+    "@types/node": "^22.15.3",
     "unbuild": "^3.5.0"
   }
 }
